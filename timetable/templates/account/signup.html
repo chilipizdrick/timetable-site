@@ -1,0 +1,40 @@
+{% extends "../base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+    {% endfor %}
+
+    <table align="center">
+    {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+            <tr>
+                <td>{{ error }}</td>
+            </tr>
+        {% endfor %}
+    {% endif %}       
+        {% for field in form %}
+            <tr>
+                <td>{{ field.label_tag }}</td>
+                <td>{{ field }}</td>
+            </tr>
+            <tr>
+                <td>
+                    {{ field.errors.as_ul }}
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <input type="submit" style="visibility: hidden; position: absolute;" />
+            <td><input type="submit" value="Sign Up" /></td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

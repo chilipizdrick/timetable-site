@@ -1,0 +1,15 @@
+[tool.ruff]
+extend-select = ["Q"]
+line-length = 80
+
+[tool.ruff.flake8-quotes]
+docstring-quotes = "double"
+inline-quotes = "single"
+
+[tool.ruff.format]
+# Prefer single quotes over double quotes
+quote-style = "single"
+
+[tool.black]
+line-length = 80
+skip-string-normalization = true

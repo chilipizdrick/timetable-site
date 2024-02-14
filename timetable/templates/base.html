@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Timetably</title>
+</head>
+
+<body>
+    <header>
+        <div align="center">
+            <h1>{% block title %}{% endblock %}</h1>
+        </div>
+    </header>
+    <main>
+        <div>
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+</body>
+
+</html>

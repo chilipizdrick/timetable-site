@@ -1,0 +1,22 @@
+{% extends "../base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+<p>You are logged in as {{ user.username }}.</p>
+<p>First name: {{ user.first_name }}</p>
+<p>Last name: {{ user.last_name }}</p>
+<p>Email: {{ user.email }}</p>
+{% if user_profile.followed_users %}
+    <p>Followed users:</p>
+    <li>
+        {% for user in user_profile.followed_users %}
+            <ul>
+                user.username
+            </ul>
+        {% endfor %}
+    </li>
+{% endif %}
+    
+{% endblock %}
